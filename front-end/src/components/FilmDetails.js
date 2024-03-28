@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {getFilm} from "../api/FilmService2";
 
 const FilmDetails = ({ updateFilm }) => {
@@ -23,7 +23,7 @@ const FilmDetails = ({ updateFilm }) => {
 
     useEffect(() => {
         fetchFilm(id);
-    }, [id]);
+    }, []);
 
     return (
         <>
@@ -33,7 +33,7 @@ const FilmDetails = ({ updateFilm }) => {
                 <details_text>Vanusepiirang: {film.vanusepiirang}</details_text>
                 <details_text>Kestvus: {film.kestvus} minutit</details_text>
                 <details_text>Žanr: {film.zanr}</details_text>
-                <button>Osta Piletid</button>
+                <button>Osta pilet</button>
             </div>
         </>
     )
