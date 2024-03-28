@@ -4,14 +4,18 @@ import './index.css'
 import Header from "./components/Header";
 import Film from "./components/Film"
 import axios from "axios";
+import {Navigate, Route, Router, Routes} from "react-router-dom";
+import FilmDetails from "./components/FilmDetails";
+import FilmList from "./components/FilmList";
 
 function App(){
     const [films, setFilms] = useState([]);
+
     useEffect(() => {
         async function fetchFilms() {
             try {
-                const response = await axios.get('http://localhost:8080/film');
-                setFilms(response.data);
+                const getAllFilms = await axios.get('http://localhost:8080/film');
+                setFilms(getAllFilms .data);
             }catch (error){
                 console.log(error);
             }
@@ -19,21 +23,22 @@ function App(){
         fetchFilms();
     }, []);
 
+    const updateFilm = async () => {
+
+    }
+
     return (
         <div>
-            <Header />
-            <div>
-                {films.map(film => (
-                    <div key={film.id}>
-                        <div className="post">
-                            <img src={film.pilt} alt={film.name}/>
-                            <header>{film.name}</header>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <Header/>
+            <Routes>
+                <Route path="/" element={<Navigate to={"/film"} />} />
+                <Route path="/film" element={<FilmList films={films} />} />
+                <Route path="/film/:id" element={<FilmDetails updateFilm={updateFilm}/>} />
+            </Routes>
         </div>
-    );
+)
+    ;
 
 }
+
 export default App;

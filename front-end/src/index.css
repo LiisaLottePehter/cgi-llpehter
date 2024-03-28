@@ -46,7 +46,7 @@ code {
   margin: auto;
   color: black;
   padding: 20px;
-  width: 200px;
+  width: 350px;
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
@@ -57,9 +57,31 @@ code {
   align-items: center;
 }
 
-.post_header {
+.post header {
+  font-size: xx-large;
+  font-weight: bold;
   display: flex;
-  font-size: 25px;
+  padding-top: 20px;
+
+}
+
+.post details_header {
+  font-size: x-large;
+  padding-top: 20px;
+  font-weight: bolder;
+}
+
+.post details_text {
+  padding-top: 15px;
+  font-size: x-large;
+  display: flex;
+}
+
+.post button {
+  margin-top: 15px;
+  background-color: beige;
+  width: 100px;
+  height: 50px;
 }
 .post img {
   width: 60%;
