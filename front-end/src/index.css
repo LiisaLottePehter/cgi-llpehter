@@ -32,7 +32,7 @@ code {
 .navbar a {
   color: rgb(255, 255, 255);
   font-weight: bold;
-  font-size: x-large;
+  font-size: large;
   text-decoration: none;
   margin: 8px;
 }
@@ -66,12 +66,14 @@ code {
 }
 
 .post details_header {
+  align-content: center;
   font-size: x-large;
   padding-top: 20px;
   font-weight: bolder;
 }
 
 .post details_text {
+  align-content: center;
   padding-top: 15px;
   font-size: x-large;
   display: flex;

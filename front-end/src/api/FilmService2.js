@@ -7,7 +7,6 @@ export async function getFilms(page=0, size=10){
     return await axios.get(`${API_URL}?page=${page}&size=${size}`);
 }
 
-export async function getFilm(id){
-    return await axios.get(`${API_URL}/${id}`);
+export async function getFilm(id, paev){
+    return await axios.get(`${API_URL}/${paev}/${id}`);
 }
-

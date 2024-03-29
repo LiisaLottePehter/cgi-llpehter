@@ -3,6 +3,8 @@ package com.example.cgi_llpehter.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalTime;
+
 @Entity
 @Table
 public class Film {
@@ -22,24 +24,37 @@ public class Film {
     private Integer vanusepiirang;
     private Integer kestvus;
     private String zanr;
+    private String toimumisPaev;
+    private LocalTime toimumisAeg;
+    private int vabadKohad;
+    private Integer SaaliNumber;
 
-    public Film() {}
+    public Film() {
+    }
 
-    public Film(Long id, String pilt, String name, Integer vanusepiirang, Integer kestvus, String zanr) {
+    public Film(Long id, String pilt, String name, Integer vanusepiirang, Integer kestvus, String zanr, String toimumisPaev, LocalTime toimumisAeg, int vabadKohad, Integer saaliNumber) {
         this.id = id;
         this.pilt = pilt;
         this.name = name;
         this.vanusepiirang = vanusepiirang;
         this.kestvus = kestvus;
         this.zanr = zanr;
+        this.toimumisPaev = toimumisPaev;
+        this.toimumisAeg = toimumisAeg;
+        this.vabadKohad = vabadKohad;
+        SaaliNumber = saaliNumber;
     }
 
-    public Film(String pilt, String name, Integer vanusepiirang, Integer kestvus, String zanr) {
+    public Film(String pilt, String name, Integer vanusepiirang, Integer kestvus, String zanr, String toimumisPaev, LocalTime toimumisAeg, int vabadKohad, Integer saaliNumber) {
         this.pilt = pilt;
         this.name = name;
         this.vanusepiirang = vanusepiirang;
         this.kestvus = kestvus;
         this.zanr = zanr;
+        this.toimumisPaev = toimumisPaev;
+        this.toimumisAeg = toimumisAeg;
+        this.vabadKohad = vabadKohad;
+        SaaliNumber = saaliNumber;
     }
 
     public Long getId() {
@@ -66,6 +81,22 @@ public class Film {
         return pilt;
     }
 
+    public String getToimumisPaev() {
+        return toimumisPaev;
+    }
+
+    public LocalTime getToimumisAeg() {
+        return toimumisAeg;
+    }
+
+    public int getVabadKohad() {
+        return vabadKohad;
+    }
+
+    public Integer getSaaliNumber() {
+        return SaaliNumber;
+    }
+
     @Override
     public String toString() {
         return "Film{" +
@@ -76,5 +107,6 @@ public class Film {
                 ", zanr='" + zanr + '\'' +
                 '}';
     }
+
 }
 
